@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clock & Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <button id="Time" class="active" onclick="showTime()">TIME</button>
+    <button id="Timer" onclick="showTimer()">TIMER</button>
+</div>
+
+<div class="container">
+
+    <div id="timeBox" class="box">
+        <h1 id="clock">00:00:00</h1>
+    </div>
+
+    <div id="timerBox" class="box hidden">
+        <h2>Timer</h2>
+
+        <div class="inputs">
+            <input type="number" id="hours" placeholder="HH" smallest="0">
+            <span>:</span>
+            <input type="number" id="minutes" placeholder="MM" smallest="0" highest="59">
+            <span>:</span>
+            <input type="number" id="seconds" placeholder="SS" smallest="0" highest="59">
+        </div>
+
+        <h1 id="timerDisplay">00:00:00</h1>
+
+        <div class="timer-buttons">
+            <button onclick="startTimer()">Start</button>
+            <button onclick="pauseTimer()">Pause</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- POPUP (HIDDEN ON LOAD) -->
+<div id="popup" class="overlay hidden">
+    <div class="popup">
+        <p class="popup-label">Time's up!</p>
+        <h2 id="finalTime">00:00:00</h2>
+        <div class="popup-buttons">
+            <button onclick="restartTimer()">Restart</button>
+            <button onclick="dismissTimer()">Dismiss</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
